@@ -1,0 +1,20 @@
+#MAIN
+vel
+0 288000 0 0 !istart iters ch_fin m_fin
+8000 1 0 !oi_chan out_press limit(this the limit that I have added to save space)
+9999999 1 99999999 9999999 24000 9999999   !oi_timer oi_cfl oi_spec oi_mean oi_gbal oi_1d
+30000.d0 1.0 0.0001 1.0 !re  gradpbar dt cflmax
+1 0 1 !tt_yes twc_yes otau_yes
+#END_MAIN
+#THRM
+conc
+0.5 2.7574 0 1.65 0 1    !sc ri(or1/Fr^2) Tmax RR nbsq_yes md_rhs_yes
+-0.0009 -0.0009    !ttab ttat =-w_settling
+-0.002 -0.002    !ttbb ttbt =-1/(re*sc)
+0.0 0.0    !ttgb ttgt
+-0.0009 0.0 0.4762 0.0514 0.0 3.05d-7 2.d-2 !w_settling tau_p beta_p rey_p phiave=phi_v/phi_ref Ero tauc
+#END_THRM
+#SP_VISC
+0.0 0.0 !epssvx epssvy
+1 1 !msvx msvy
+#END_SP_VISC
