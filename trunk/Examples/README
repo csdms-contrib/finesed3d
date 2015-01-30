@@ -1,0 +1,19 @@
+The example folder consists of three cases:
+
+Case 2: sediment suspension/deposition without inertia effect or hindered settling;
+Case 2A: Case 2 with inertia effect turned on (St=0.03);
+Case 2B: Case 2 with hindered settling turned on (phi_f = 0.63).
+
+To save disk space, the initial files (conc.0, vel.0 and press.0) are only stored in Case 2, and they are velocity and pressure information from the Case 0 (sediment-free), in each folder the file initial is edited accordingly.
+
+The installation and compilation instructions can be found in the appendix of the User manual. After the code is successfully compiled, copy the executive file “FineSed3D” to the working directory (for example, Case 2A), and then use the following command to run the code:
+
+./FineSed3D < initial
+
+Since the ch_fin is set to 0, the initialization will be called (see definition in initial_compact.F), and the code will read the vel.0 as velocity input, and set the initial concentration field to sediment-free.
+
+For more information about the model output, please also refer to the appendix in the user manual. A test data is made available for Case 2, which is called ‘Case2Data.mat’, and the ensemble-averaged profile of the sediment concentration (conc), velocity (vel) and kinetic energy (k).
+
+If you have any problem or questions running the code, please feel free to contact me through email:
+
+zcheng@udel.edu (Zhen Cheng)
